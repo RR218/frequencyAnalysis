@@ -6,7 +6,7 @@ import sys
 # Place cipher inside """  """
 cipher = """  """
 
-letterCount = (len(cipher))
+letterCount = len(cipher)
 print("\letter Count: " + str(letterCount) + "\n")
 
 
