@@ -6,8 +6,8 @@ import sys
 # Place cipher inside """  """
 cipher = """  """
 
-wordCount = (len(cipher))
-print(f"\nWord Count: " + str(wordCount) + "\n")
+letterCount = (len(cipher))
+print("\letter Count: " + str(letterCount) + "\n")
 
 
 class Attack:
