@@ -7,7 +7,7 @@ import sys
 cipher = """  """
 
 letterCount = len(cipher)
-print("\letter Count: " + str(letterCount) + "\n")
+print("\nletter Count: " + str(letterCount) + "\n")
 
 
 class Attack:
