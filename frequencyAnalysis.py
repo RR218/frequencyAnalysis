@@ -87,7 +87,7 @@ attack.calculate_freq(cipher)
 attack.print_freq()
 attack.calculate_matches()
 
-# Run the script multiple times in your text editor terminal
+# Run the script multiple times in your text editor terminal / console
 # and map the probable matches manually with the format as shown below.
 
 # attack.set_key_mapping(p = plain text, c = cipher)
