@@ -6,10 +6,7 @@ import sys
 colorama.init(autoreset=True)
 
 # Place cipher inside """  """
-cipher = """lkfsalkjda ksajdh kajdhadjh askjdhdha kjxahxhkjsahhdaiuhkjkjhdsakjhdadhka
-ajsdajkhdakjdhkds
-jhagdjahdjhgdhgajgd
-choiccjcdkdkdjfj """
+cipher = """ """
 cipher = cipher.lower()
 print(colorama.Fore.GREEN + "\nCIPHER :\n")
 print(colorama.Fore.CYAN + cipher)
