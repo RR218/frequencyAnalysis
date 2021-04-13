@@ -1,15 +1,21 @@
-#!/usr/bin/env python3.9
-
+#!/usr/bin/env python3.9.4
+import colorama
 import operator
 import sys
 
+colorama.init(autoreset=True)
+
 # Place cipher inside """  """
-cipher = """  """
+cipher = """lkfsalkjda ksajdh kajdhadjh askjdhdha kjxahxhkjsahhdaiuhkjkjhdsakjhdadhka
+ajsdajkhdakjdhkds
+jhagdjahdjhgdhgajgd
+choiccjcdkdkdjfj """
 cipher = cipher.lower()
-print(cipher)
+print(colorama.Fore.GREEN + "\nCIPHER :\n")
+print(colorama.Fore.CYAN + cipher)
 
 letterCount = len(cipher)
-print("\nletter Count: " + str(letterCount) + "\n")
+print(colorama.Fore.RED + "\nletter Count: " + str(letterCount) + "\n")
 
 
 class Attack:
@@ -42,7 +48,7 @@ class Attack:
     def print_freq(self):
         new_line_count = 0
         for c in self.freq:
-            print(c, ':', self.freq[c], ' ', end='')
+            print(colorama.Fore.BLUE + c, ':', self.freq[c],  ' ', end='')
             if new_line_count % 3 == 2:
                 print()
             new_line_count += 1
@@ -81,7 +87,7 @@ def decrypt(key, cipher):
             message += key[c]
         else:
             message += c
-    return message
+    return (message)
 
 
 attack = Attack()
@@ -116,11 +122,12 @@ attack.calculate_matches()
 
 attack.guess_key()
 key = attack.get_key()
-print()
+print("\n\n")
 print(key)
+print()
 message = decrypt(key, cipher)
 message_lines = message.splitlines()
 cipher_lines = cipher.splitlines()
 for i in range(len(message_lines)):
-    print('p:', message_lines[i])
-    print('c:', cipher_lines[i])
+    print(colorama.Fore.CYAN + 'p:', colorama.Fore.CYAN + message_lines[i])
+    print(colorama.Fore.RED + 'c:', colorama.Fore.RED + cipher_lines[i])
