@@ -5,6 +5,8 @@ import sys
 
 # Place cipher inside """  """
 cipher = """  """
+cipher = cipher.lower()
+print(cipher
 
 letterCount = len(cipher)
 print("\nletter Count: " + str(letterCount) + "\n")
