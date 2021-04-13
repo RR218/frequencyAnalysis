@@ -13,7 +13,7 @@ print(colorama.Fore.CYAN + "\n----Cipher----\n")
 print(cipher)
 
 letterCount = len(cipher)
-print(colorama.Fore.RED + "\nletter Count: " , str(letterCount))
+print(colorama.Fore.RED + "\nLetter Count: " , str(letterCount))
 
 
 class Attack:
