@@ -6,8 +6,9 @@ import sys
 colorama.init(autoreset=True)
 
 # Place cipher inside quotation marks """  """
-cipher = """gds jytryu kuriykf
-jytdytyfhgf """
+cipher = """lkjdlkaslkjd
+lkasjdlkdja
+xlsjxklskx """
 cipher = cipher.lower()
 print(colorama.Fore.CYAN + "\n----Cipher----\n")
 print(cipher)
@@ -123,7 +124,7 @@ attack.guess_key()
 key = attack.get_key()
 
 print(colorama.Fore.CYAN + "\n\n----Current Key Mapping----\n")
-print( "{",colorama.Fore.RED + "'cipher'",":" , colorama.Fore.CYAN + "'plain'","}"," Format")
+print(colorama.Fore.YELLOW + "{",colorama.Fore.RED + "'cipher'",colorama.Fore.YELLOW +":" , colorama.Fore.CYAN + "'plain'",colorama.Fore.YELLOW +"}", colorama.Fore.GREEN + " Format")
 print(key)
 print()
 message = decrypt(key, cipher)
