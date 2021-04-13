@@ -6,13 +6,14 @@ import sys
 colorama.init(autoreset=True)
 
 # Place cipher inside quotation marks """  """
-cipher = """ """
+cipher = """gds jytryu kuriykf
+jytdytyfhgf """
 cipher = cipher.lower()
-print(colorama.Fore.BLUE + "\nCIPHER :\n")
+print(colorama.Fore.CYAN + "\n----Cipher----\n")
 print(cipher)
 
 letterCount = len(cipher)
-print(colorama.Fore.RED + "\nletter Count: " , str(letterCount) + "\n")
+print(colorama.Fore.RED + "\nletter Count: " , str(letterCount))
 
 
 class Attack:
@@ -44,6 +45,7 @@ class Attack:
 
     def print_freq(self):
         new_line_count = 0
+        print(colorama.Fore.CYAN + "\n----Letter Frequency----\n")
         for c in self.freq:
             print(colorama.Fore.BLUE + c, ':', self.freq[c],  ' ', end='')
             if new_line_count % 3 == 2:
@@ -119,12 +121,14 @@ attack.calculate_matches()
 
 attack.guess_key()
 key = attack.get_key()
-print("\n\n")
+
+print(colorama.Fore.CYAN + "\n\n----Current Key Mapping----\n")
 print(key)
 print()
 message = decrypt(key, cipher)
 message_lines = message.splitlines()
 cipher_lines = cipher.splitlines()
 for i in range(len(message_lines)):
-    print(colorama.Fore.CYAN + 'p:', colorama.Fore.CYAN + message_lines[i])
     print(colorama.Fore.RED + 'c:', colorama.Fore.RED + cipher_lines[i])
+    print(colorama.Fore.CYAN + 'p:', colorama.Fore.CYAN + message_lines[i])
+    
