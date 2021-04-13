@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.9.4
+#!/usr/bin/env python3
 import colorama
 import operator
 import sys
@@ -6,13 +6,13 @@ import sys
 colorama.init(autoreset=True)
 
 # Place cipher inside """  """
-cipher = """ """
+cipher = """ngfcmhcgcghcmhgfhghdhjfkjfj kuydkdtu """
 cipher = cipher.lower()
-print(colorama.Fore.GREEN + "\nCIPHER :\n")
-print(colorama.Fore.CYAN + cipher)
+print(colorama.Fore.BLUE + "\nCIPHER :\n")
+print(cipher)
 
 letterCount = len(cipher)
-print(colorama.Fore.RED + "\nletter Count: " + str(letterCount) + "\n")
+print(colorama.Fore.RED + "\nletter Count: " , str(letterCount) + "\n")
 
 
 class Attack:
