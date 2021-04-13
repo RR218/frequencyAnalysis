@@ -5,8 +5,8 @@ import sys
 
 colorama.init(autoreset=True)
 
-# Place cipher inside """  """
-cipher = """ngfcmhcgcghcmhgfhghdhjfkjfj kuydkdtu """
+# Place cipher inside quotation marks """  """
+cipher = """ """
 cipher = cipher.lower()
 print(colorama.Fore.BLUE + "\nCIPHER :\n")
 print(cipher)
