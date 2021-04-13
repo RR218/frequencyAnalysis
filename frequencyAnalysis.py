@@ -123,6 +123,7 @@ attack.guess_key()
 key = attack.get_key()
 
 print(colorama.Fore.CYAN + "\n\n----Current Key Mapping----\n")
+print( "{",colorama.Fore.RED + "'cipher'",":" , colorama.Fore.CYAN + "'plain'","}"," Format")
 print(key)
 print()
 message = decrypt(key, cipher)
