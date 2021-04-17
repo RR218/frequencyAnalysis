@@ -12,7 +12,7 @@ print(colorama.Fore.CYAN + "\n----Cipher----\n")
 print(cipher)
 
 letterCount = len(cipher)
-print(colorama.Fore.RED + "\nLetter Count: " , str(letterCount))
+print(colorama.Fore.BLUE + "\nLetter Count: " , str(letterCount))
 
 
 class Attack:
@@ -133,4 +133,4 @@ try:
         print(colorama.Fore.CYAN + 'p:', colorama.Fore.CYAN + message_lines[i])
 
 except Exception as e:
-    print(f"Error: {e}")        
+    print(colorama.Fore.RED + "\nERROR: ", e , "\n")        
