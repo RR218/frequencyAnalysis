@@ -89,51 +89,51 @@ def decrypt(key, cipher):
     return (message)
 
 
+if __name__=="__main__":
+    try:
+        attack = Attack()
+        attack.calculate_freq(cipher)
+        attack.print_freq()
+        attack.calculate_matches()
 
-try:
-    attack = Attack()
-    attack.calculate_freq(cipher)
-    attack.print_freq()
-    attack.calculate_matches()
+        # Run the script multiple times in your text editor terminal / console
+        # and map the probable matches manually with the format as shown below.
 
-    # Run the script multiple times in your text editor terminal / console
-    # and map the probable matches manually with the format as shown below.
+        # attack.set_key_mapping(p = plain text, c = cipher)
 
-    # attack.set_key_mapping(p = plain text, c = cipher)
+        # EXAMPLES OF SUSPECTED MATCH:
+        # attack.set_key_mapping('m', 'a')
+        # attack.set_key_mapping('p', 'h')
+        # attack.set_key_mapping('r', 'e')
+        # attack.set_key_mapping('t', 'y')
+        # attack.set_key_mapping('v', 'c')
+        # attack.set_key_mapping('q', 'k')
+        # attack.set_key_mapping('x', 'f')
+        # attack.set_key_mapping('y', 'm')
+        # attack.set_key_mapping('e', 'v')
+        # attack.set_key_mapping('k', 'n')
+        # attack.set_key_mapping('s', 'p')
+        # attack.set_key_mapping('u', 'r')
+        # attack.set_key_mapping('d', 'd')
+        # attack.set_key_mapping('a', 'x')
+        # attack.set_key_mapping('c', 'w')
+        # attack.set_key_mapping('w', 'i')
+        # attack.set_key_mapping('b', 't')
+        # attack.set_key_mapping('', '')
 
-    # EXAMPLES OF SUSPECTED MATCH:
-    # attack.set_key_mapping('m', 'a')
-    # attack.set_key_mapping('p', 'h')
-    # attack.set_key_mapping('r', 'e')
-    # attack.set_key_mapping('t', 'y')
-    # attack.set_key_mapping('v', 'c')
-    # attack.set_key_mapping('q', 'k')
-    # attack.set_key_mapping('x', 'f')
-    # attack.set_key_mapping('y', 'm')
-    # attack.set_key_mapping('e', 'v')
-    # attack.set_key_mapping('k', 'n')
-    # attack.set_key_mapping('s', 'p')
-    # attack.set_key_mapping('u', 'r')
-    # attack.set_key_mapping('d', 'd')
-    # attack.set_key_mapping('a', 'x')
-    # attack.set_key_mapping('c', 'w')
-    # attack.set_key_mapping('w', 'i')
-    # attack.set_key_mapping('b', 't')
-    # attack.set_key_mapping('', '')
+        attack.guess_key()
+        key = attack.get_key()
 
-    attack.guess_key()
-    key = attack.get_key()
+        print(colorama.Fore.CYAN + "\n\n----Current Key Mapping----\n")
+        print(colorama.Fore.YELLOW + "{",colorama.Fore.RED + "'cipher'",colorama.Fore.YELLOW +":" , colorama.Fore.CYAN + "'plain'",colorama.Fore.YELLOW +"}", colorama.Fore.GREEN + " Format")
+        print(key)
+        print()
+        message = decrypt(key, cipher)
+        message_lines = message.splitlines()
+        cipher_lines = cipher.splitlines()
+        for i in range(len(message_lines)):
+            print(colorama.Fore.RED + 'c:', colorama.Fore.RED + cipher_lines[i])
+            print(colorama.Fore.CYAN + 'p:', colorama.Fore.CYAN + message_lines[i])
 
-    print(colorama.Fore.CYAN + "\n\n----Current Key Mapping----\n")
-    print(colorama.Fore.YELLOW + "{",colorama.Fore.RED + "'cipher'",colorama.Fore.YELLOW +":" , colorama.Fore.CYAN + "'plain'",colorama.Fore.YELLOW +"}", colorama.Fore.GREEN + " Format")
-    print(key)
-    print()
-    message = decrypt(key, cipher)
-    message_lines = message.splitlines()
-    cipher_lines = cipher.splitlines()
-    for i in range(len(message_lines)):
-        print(colorama.Fore.RED + 'c:', colorama.Fore.RED + cipher_lines[i])
-        print(colorama.Fore.CYAN + 'p:', colorama.Fore.CYAN + message_lines[i])
-
-except Exception as e:
-    print(colorama.Fore.RED + "\nERROR: ", e , "\n")        
+    except Exception as e:
+        print(colorama.Fore.RED + "\nERROR: ", e , "\n")        
