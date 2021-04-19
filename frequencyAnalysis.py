@@ -78,59 +78,61 @@ class Attack:
         return self.key
 
 
-def decrypt(key, cipher):
-    message = ""
-    for c in cipher:
-        if c in key:
-            message += key[c]
-        else:
-            message += c
-    return (message)
+    def decrypt(key, cipher):
+        message = ""
+        for c in cipher:
+            if c in key:
+                message += key[c]
+            else:
+                message += c
+        return (message)
 
-try:
-    attack = Attack()
-    attack.calculate_freq(cipher)
-    attack.print_freq()
-    attack.calculate_matches()
 
-    # Run the script multiple times in your text editor terminal / console
-    # and map the probable matches manually with the format as shown below.
+if __name__=="__main__":
+    try:
+        attack = Attack()
+        attack.calculate_freq(cipher)
+        attack.print_freq()
+        attack.calculate_matches()
 
-    # attack.set_key_mapping(p = plain text, c = cipher)
+        # Run the script multiple times in your text editor terminal / console
+        # and map the probable matches manually with the format as shown below.
 
-    # EXAMPLES OF SUSPECTED MATCH:
-    # attack.set_key_mapping('m', 'a')
-    # attack.set_key_mapping('p', 'h')
-    # attack.set_key_mapping('r', 'e')
-    # attack.set_key_mapping('t', 'y')
-    # attack.set_key_mapping('v', 'c')
-    # attack.set_key_mapping('q', 'k')
-    # attack.set_key_mapping('x', 'f')
-    # attack.set_key_mapping('y', 'm')
-    # attack.set_key_mapping('e', 'v')
-    # attack.set_key_mapping('k', 'n')
-    # attack.set_key_mapping('s', 'p')
-    # attack.set_key_mapping('u', 'r')
-    # attack.set_key_mapping('d', 'd')
-    # attack.set_key_mapping('a', 'x')
-    # attack.set_key_mapping('c', 'w')
-    # attack.set_key_mapping('w', 'i')
-    # attack.set_key_mapping('b', 't')
-    # attack.set_key_mapping('', '')
+        # attack.set_key_mapping(p = plain text, c = cipher)
 
-    attack.guess_key()
-    key = attack.get_key()
+        # EXAMPLES OF SUSPECTED MATCH:
+        # attack.set_key_mapping('m', 'a')
+        # attack.set_key_mapping('p', 'h')
+        # attack.set_key_mapping('r', 'e')
+        # attack.set_key_mapping('t', 'y')
+        # attack.set_key_mapping('v', 'c')
+        # attack.set_key_mapping('q', 'k')
+        # attack.set_key_mapping('x', 'f')
+        # attack.set_key_mapping('y', 'm')
+        # attack.set_key_mapping('e', 'v')
+        # attack.set_key_mapping('k', 'n')
+        # attack.set_key_mapping('s', 'p')
+        # attack.set_key_mapping('u', 'r')
+        # attack.set_key_mapping('d', 'd')
+        # attack.set_key_mapping('a', 'x')
+        # attack.set_key_mapping('c', 'w')
+        # attack.set_key_mapping('w', 'i')
+        # attack.set_key_mapping('b', 't')
+        # attack.set_key_mapping('', '')
 
-    print(colorama.Fore.CYAN + "\n\n----Current Key Mapping----\n")
-    print(colorama.Fore.YELLOW + "{",colorama.Fore.RED + "'cipher'",colorama.Fore.YELLOW +":" , colorama.Fore.CYAN + "'plain'",colorama.Fore.YELLOW +"}", colorama.Fore.GREEN + " Format")
-    print(key)
-    print()
-    message = decrypt(key, cipher)
-    message_lines = message.splitlines()
-    cipher_lines = cipher.splitlines()
-    for i in range(len(message_lines)):
-        print(colorama.Fore.RED + 'c:', colorama.Fore.RED + cipher_lines[i])
-        print(colorama.Fore.CYAN + 'p:', colorama.Fore.CYAN + message_lines[i])
+        attack.guess_key()
+        key = attack.get_key()
 
-except Exception as e:
-    print(colorama.Fore.RED + "\nERROR: ", e , "\n")        
+        print(colorama.Fore.CYAN + "\n\n----Current Key Mapping----\n")
+        print(colorama.Fore.YELLOW + "{",colorama.Fore.RED + "'cipher'",colorama.Fore.YELLOW +":" , colorama.Fore.CYAN + "'plain'",colorama.Fore.YELLOW +"}", colorama.Fore.GREEN + " Format")
+        print(key)
+        print()
+        message = decrypt(key, cipher)
+        message_lines = message.splitlines()
+        cipher_lines = cipher.splitlines()
+        for i in range(len(message_lines)):
+            print(colorama.Fore.RED + 'c:', colorama.Fore.RED + cipher_lines[i])
+            print(colorama.Fore.CYAN + 'p:', colorama.Fore.CYAN + message_lines[i])
+
+    except Exception as e:
+        print(colorama.Fore.RED + "\nERROR: ", e , "\n")        
